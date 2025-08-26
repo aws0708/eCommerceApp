@@ -12,3 +12,5 @@
 
 
 7.. ng serve    X         ng serve --configuration=development
+
+8.ng add @angular/material   ---> then in styles.css --- @import "@angular/material/prebuilt-themes/indigo-pink.css";
