@@ -1,0 +1,14 @@
+1. ng new amazing-animal-paintings
+
+2. ng g module product
+
+3. ng g service product/product 
+
+4. ng g c product/product-list 
+
+5. ng g class models/product 
+
+6. ng g environments 
+
+
+7.. ng serve    X         ng serve --configuration=development
