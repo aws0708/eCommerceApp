@@ -11,6 +11,13 @@
 6. ng g environments 
 
 
-7.. ng serve    X         ng serve --configuration=development
+7.. ng serve    (X)         ng serve --configuration=development
 
 8.ng add @angular/material   ---> then in styles.css --- @import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+9. Angular flex layout (because we can't make our page responsive using Angular Material)
+   npm i  @angular/flex-layout  AND SPECIFICALLY
+   npm install @angular/flex-layout@15.0.0-beta.42 @angular/cdk
+
+
+   Material’s built-in colors are limited to primary, accent, and warn.
