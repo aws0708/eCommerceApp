@@ -4,15 +4,21 @@
     <mat-form-field>
         <input matInput placeholder="Search" (keyup)="applyFilter($event)">
     </mat-form-field>
+    <mat-form-field class="sort-dropdown">
+        <mat-select placeholder="Sort" (selectionChange)="sortProducts($event.value)">
+            <mat-option value="priceLowHigh">Price: Low to High</mat-option>
+            <mat-option value="priceHighLow">Price: Low to High</mat-option>
+        </mat-select>
+    </mat-form-field>
     <div fxLayout="row wrap">
-    <div *ngFor="let product of filteredProducts">
-        <mat-card class="product-card" appearance="outlined" (click)="addToCartSnackBar(product)">
-            <img mat-card-image src="assets/images/{{product.image_url}}" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-                <mat-card-title>{{product.name}}</mat-card-title>
-                <mat-card-subtitle>{{product.price | currency:'USD'}}</mat-card-subtitle>
-            </mat-card-content>
-        </mat-card>
+        <div *ngFor="let product of filteredProducts">
+            <mat-card class="product-card" appearance="outlined" (click)="addToCartSnackBar(product)">
+                <img mat-card-image src="assets/images/{{product.image_url}}" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <mat-card-title>{{product.name}}</mat-card-title>
+                    <mat-card-subtitle>{{product.price | currency:'USD'}}</mat-card-subtitle>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
-</div>
 </div>
