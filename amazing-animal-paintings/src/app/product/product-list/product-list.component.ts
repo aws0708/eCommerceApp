@@ -12,12 +12,14 @@ import { Router } from '@angular/router';
 })
 export class ProductListComponent implements OnInit{
   products:Product[]=[];
+  filteredProducts:Product[]=[];
   constructor(private productService: ProductService,
     private cartService: CartService, private snackBar: MatSnackBar, private router:Router) { }
 
   ngOnInit(): void {
      this.productService.getProducts().subscribe(data=>{
             this.products = data;
+            this.filteredProducts = data;
     })
   }
   addToCartSnackBar(product: Product){
@@ -48,6 +50,14 @@ export class ProductListComponent implements OnInit{
         )
       }
     });
+  }
+
+  applyFilter(event:Event){
+    let searchTerm= (event.target as HTMLInputElement).value.toLowerCase();
+    this.filteredProducts = this.products.filter((product)=>{
+      return product.name.toLowerCase().includes(searchTerm);
+    })
+
   }
 
 
